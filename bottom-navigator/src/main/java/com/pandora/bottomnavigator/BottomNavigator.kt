@@ -78,7 +78,7 @@ open class BottomNavigator internal constructor() : ViewModel() {
     internal fun onNavigationItemSelected(menuItem: MenuItem) {
         val tab = menuItem.itemId
         if (currentTab != tab) {
-            switchTab(tab)
+            reset(tab, false)
         } else {
             if (isAtRootOfStack()) {
                 val currentFragment = currentFragment()
